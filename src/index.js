@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+//ES2015 import statements
+import React from "react";
+import ReactDOM from "react-dom";
+// const React=require('react'); different style import statement in common js
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//creating a new calss or function for react to render
+const App = () => {
+  const buttonText="Click Me!";
+  return(
+    <div>
+      <label htmlFor="name" className="NameLabel">EnterName:</label>
+      <input id="name" type="text" />
+  <button style={{backgroundColor:'burlywood',color:'black'}}>{buttonText}</button>
+    </div>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//render and display the object
+ReactDOM.render(<App />, document.querySelector("#root"));
